@@ -15,11 +15,12 @@ namespace WEB1.Infrastructure.Repository
         public int Delete(Guid productId)
         {
             // khai báo thông tin kết nối
-            var connectionString = "Server=localhost; " +
-                "Port=3306;" +
-                "Database=website_bandan_umee;" +
-                "User Id=ndhuy" +
-                "Password=mgmepgmfte";
+            string connectionString = "Server = localhost; " +
+                                    "Port=3306; " +
+                                    "Database = website_bandan_umee;" +
+                                    "User Id= ndhuy;" +
+                                    "Password=mgmepgmfte";
+
             // khởi tạo kết nối
             MySqlConnection sqlConnection = new MySqlConnection(connectionString);
             // sql
@@ -34,11 +35,11 @@ namespace WEB1.Infrastructure.Repository
         public Product GetProduct(Guid productId)
         {
             // khai báo thông tin kết nối
-            var connectionString = "Server=localhost; " +
-                "Port=3306;" +
-                "Database=website_bandan_umee;" +
-                "User Id=ndhuy" +
-                "Password=mgmepgmfte";
+            string connectionString = "Server = localhost; " +
+                                    "Port=3306; " +
+                                    "Database = website_bandan_umee;" +
+                                    "User Id= ndhuy;" +
+                                    "Password=mgmepgmfte";
             // khởi tạo kết nối
             MySqlConnection sqlConnection = new MySqlConnection(connectionString);
             // lấy dữ liệu từ database
@@ -51,20 +52,20 @@ namespace WEB1.Infrastructure.Repository
             return product;
         }
 
-        public IEnumerable<Product> GetProducts()
+        public IEnumerable<Object> GetProducts()
         {
             // khai báo thông tin kết nối
-            var connectionString = "Server=localhost; " +
-                "Port=3306;" +
-                "Database=website_bandan_umee;" +
-                "User Id=ndhuy" +
-                "Password=mgmepgmfte";
+            string connectionString = "Server = localhost; " +
+                                    "Port=3306; " +
+                                    "Database = website_bandan_umee;" +
+                                    "User Id= ndhuy;" +
+                                    "Password=mgmepgmfte";
             // khởi tạo kết nối
             MySqlConnection sqlConnection = new MySqlConnection(connectionString);
             // lấy dữ liệu từ database
             var sqlCommand = "SELECT * FROM product";
             // thực thi truy vấn
-            var products = sqlConnection.Query<Product>(sqlCommand);
+            var products = sqlConnection.Query<Object>(sqlCommand);
             // trả về dữ liệu
             return products;
         }
@@ -74,11 +75,11 @@ namespace WEB1.Infrastructure.Repository
             // sinh id cho đối tượng
             product.ProductId = Guid.NewGuid();
             // khai báo thông tin kết nối
-            var connectionString = "Server=localhost; " +
-                "Port=3306;" +
-                "Database=website_bandan_umee;" +
-                "User Id=ndhuy" +
-                "Password=mgmepgmfte";
+            string connectionString = "Server = localhost; " +
+                                    "Port=3306; " +
+                                    "Database = website_bandan_umee;" +
+                                    "User Id= ndhuy;" +
+                                    "Password=mgmepgmfte";
             // khởi tạo kết nối
             MySqlConnection sqlConnection = new MySqlConnection(connectionString);
             // sql

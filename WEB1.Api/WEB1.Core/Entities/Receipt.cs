@@ -10,7 +10,7 @@ namespace WEB1.Core.Entities
     /// Thông tin đơn hàng
     /// CreatedBy: NDHuy (08/04/2022)
     /// </summary>
-    public class Order
+    public class Receipt
     {
         #region Property
         /// <summary>

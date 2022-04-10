@@ -13,7 +13,7 @@ namespace WEB1.Api.Interfaces.Infrastructure
         /// </summary>
         /// <returns></returns>
         /// CreatedBy: NDHuy (02/04/2022)
-        IEnumerable<Product> GetProducts();
+        IEnumerable<Object> GetProducts();
 
         /// <summary>
         /// Thêm mới sản phẩm

@@ -7,28 +7,24 @@ using System.Threading.Tasks;
 namespace WEB1.Core.Entities
 {
     /// <summary>
-    /// Chi tiết đơn hàng
-    /// CreatedBy: NDHuy (08/04/2022)
+    /// thông tin ảnh 
+    /// CreatedBy: NDHuy (10/04/2022)
     /// </summary>
-    public class OrderDetail
+    public class Image
     {
         #region Property
         /// <summary>
-        /// Khóa ngoại, Mã đơn hàng
+        /// Khóa chính, mã ảnh
         /// </summary>
-        public Guid OrderId { get; set; }
+        public Guid ImageId { get; set; }
         /// <summary>
         /// Khóa ngoại, mã sản phẩm
         /// </summary>
         public Guid ProductId { get; set; }
         /// <summary>
-        /// Giá đơn hàng
+        /// Đường dẫn ảnh
         /// </summary>
-        public int Price { get; set; }
-        /// <summary>
-        /// Số lượng đặt mua
-        /// </summary>
-        public int Amount { get; set; }
+        public string Url { get; set; }
         #endregion
     }
 }
