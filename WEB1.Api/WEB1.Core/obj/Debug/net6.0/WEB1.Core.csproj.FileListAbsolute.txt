@@ -1,0 +1,12 @@
+D:\ASP.Net\Train-web\WEB1.Api\WEB1.Core\bin\Debug\net6.0\WEB1.Core.deps.json
+D:\ASP.Net\Train-web\WEB1.Api\WEB1.Core\bin\Debug\net6.0\WEB1.Core.dll
+D:\ASP.Net\Train-web\WEB1.Api\WEB1.Core\bin\Debug\net6.0\WEB1.Core.pdb
+D:\ASP.Net\Train-web\WEB1.Api\WEB1.Core\obj\Debug\net6.0\WEB1.Core.csproj.AssemblyReference.cache
+D:\ASP.Net\Train-web\WEB1.Api\WEB1.Core\obj\Debug\net6.0\WEB1.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\ASP.Net\Train-web\WEB1.Api\WEB1.Core\obj\Debug\net6.0\WEB1.Core.AssemblyInfoInputs.cache
+D:\ASP.Net\Train-web\WEB1.Api\WEB1.Core\obj\Debug\net6.0\WEB1.Core.AssemblyInfo.cs
+D:\ASP.Net\Train-web\WEB1.Api\WEB1.Core\obj\Debug\net6.0\WEB1.Core.csproj.CoreCompileInputs.cache
+D:\ASP.Net\Train-web\WEB1.Api\WEB1.Core\obj\Debug\net6.0\WEB1.Core.dll
+D:\ASP.Net\Train-web\WEB1.Api\WEB1.Core\obj\Debug\net6.0\refint\WEB1.Core.dll
+D:\ASP.Net\Train-web\WEB1.Api\WEB1.Core\obj\Debug\net6.0\WEB1.Core.pdb
+D:\ASP.Net\Train-web\WEB1.Api\WEB1.Core\obj\Debug\net6.0\ref\WEB1.Core.dll
