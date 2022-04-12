@@ -46,6 +46,6 @@ namespace WEB1.Api.Interfaces.Infrastructure
         /// <param name="productId"></param>
         /// <returns></returns>
         /// CreatedBy: NDHuy (08/04/2022)
-        Product GetProduct(Guid productId);
+        object GetProduct(Guid productId);
     }
 }

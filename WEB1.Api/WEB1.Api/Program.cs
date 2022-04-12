@@ -1,4 +1,5 @@
 ﻿using WEB1.Api.Interfaces.Infrastructure;
+using WEB1.Core.Interfaces.Infrastructure;
 using WEB1.Core.Interfaces.Service;
 using WEB1.Core.Service;
 using WEB1.Infrastructure.Repository;
@@ -15,6 +16,9 @@ builder.Services.AddSwaggerGen();
 // Xử lý DI:
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -48,7 +48,7 @@ namespace WEB1.Api.Controllers
                 if(res > 0)
                     return StatusCode(201, res);
                 else
-                    return StatusCode(200, res);
+                    return Ok(res);
             }
             catch (Exception ex)
             {
