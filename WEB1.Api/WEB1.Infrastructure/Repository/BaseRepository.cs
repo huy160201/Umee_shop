@@ -24,7 +24,7 @@ namespace WEB1.Infrastructure.Repository
 
         protected IEnumerable<object> Get<UmeeEntity>()
         {
-            using(var sqlConnection = new MySqlConnection(connectionString))
+            using(sqlConnection = new MySqlConnection(connectionString))
             {
                 var tableName = typeof(UmeeEntity).Name;
                 // lấy dữ liệu:
@@ -37,7 +37,7 @@ namespace WEB1.Infrastructure.Repository
 
         protected object Get<UmeeEntity>(Guid entityId)
         {
-            using (var sqlConnection = new MySqlConnection(connectionString))
+            using (sqlConnection = new MySqlConnection(connectionString))
             {
                 var tableName = typeof(UmeeEntity).Name;
                 // lấy dữ liệu:
@@ -52,13 +52,13 @@ namespace WEB1.Infrastructure.Repository
 
         protected int Insert<UmeeEntity>(UmeeEntity entity)
         {
-            using (var sqlConnection = new MySqlConnection(connectionString))
+            using (sqlConnection = new MySqlConnection(connectionString))
             {
                 //Lấy tên của class tương ứng tableName trong dtb
                 var tableName = typeof(UmeeEntity).Name;
                 var listColumnNames = string.Empty;
                 var listColumnParam = string.Empty;
-                
+                                                            
                 var parameters = new DynamicParameters();
                 //1, duyệt từng prop của object
                 var props = typeof(UmeeEntity).GetProperties();
@@ -72,7 +72,7 @@ namespace WEB1.Infrastructure.Repository
 
                     // từ tên, giá trị của prop -> build câu lệnh truy vấn, add param cho parameters
                     listColumnNames += $"{propName},";
-                    listColumnParam += $"@{propValue},";
+                    listColumnParam += $"@{propName},";
                     parameters.Add($"@{propName}", propValue);
                 }
                 //2, loại bỏ dấu phẩy ở cuối list
@@ -84,6 +84,19 @@ namespace WEB1.Infrastructure.Repository
                 var rowInserts = sqlConnection.Execute(sql: sqlCommand, param: parameters);
                 return rowInserts;
             }
+        }   
+        
+        protected int Delete<UmeeEntity>(Guid entityId)
+        {
+            // lấy ra tên table
+            var tableName = typeof(UmeeEntity).Name;
+            //xóa dữ liệu
+            var sqlCommand = $"DELETE FROM {tableName} WHERE {tableName}Id = @{tableName}Id";
+            DynamicParameters parameters = new DynamicParameters();
+            parameters.Add($"@{tableName}Id", entityId);
+            var res = sqlConnection.Execute(sql: sqlCommand, param: parameters);
+
+            return res;
         }    
     }
 }

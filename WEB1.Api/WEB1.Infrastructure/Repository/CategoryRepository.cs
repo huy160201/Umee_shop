@@ -16,14 +16,15 @@ namespace WEB1.Infrastructure.Repository
         {
             using (sqlConnection = new MySqlConnection(connectionString))
             {
-                // sql
-                var sqlCommand = "DELETE FROM category WHERE CategoryId = @CategoryId";
-                DynamicParameters parameters = new DynamicParameters();
-                parameters.Add("@CategoryId", categoryId);
-                // thực thi truy vấn
-                var res = sqlConnection.Execute(sqlCommand, param: parameters);
-                // trả về kết quả truy vấn
+                
+                //var sqlCommand = "DELETE FROM category WHERE CategoryId = @CategoryId";
+                //DynamicParameters parameters = new DynamicParameters();
+                //parameters.Add("@CategoryId", categoryId);
+                
+                //var res = sqlConnection.Execute(sqlCommand, param: parameters);
+                var res = Delete<Category>(categoryId);
                 return res;
+                
             }
             
         }
@@ -44,7 +45,9 @@ namespace WEB1.Infrastructure.Repository
         {
             using (sqlConnection = new MySqlConnection(connectionString))
             {
+                //Sinh Id tự động cho đối tượng
                 category.CategoryId = Guid.NewGuid();
+                
                 var res = Insert<Category>(category);
                 return res;
             }

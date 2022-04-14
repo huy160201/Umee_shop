@@ -80,5 +80,28 @@ namespace WEB1.Api.Controllers
                 return StatusCode(500, result);
             }
         }
+
+        [HttpDelete("{categoryId}")]
+        public IActionResult Delete(Guid categoryId)
+        {
+            try
+            {
+                var res = _categoryRepository.Delete(categoryId);
+                if (res > 0)
+                    return StatusCode(201, res);
+                else
+                    return Ok(res);
+            }
+            catch (Exception ex)
+            {
+                var result = new
+                {
+                    devMsg = ex.Message,
+                    userMag = "Có lỗi xảy ra",
+                    data = ""
+                };
+                return StatusCode(500, result);
+            }
+        }
     }
 }
