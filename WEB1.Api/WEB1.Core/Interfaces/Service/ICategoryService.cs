@@ -2,9 +2,12 @@
 
 namespace WEB1.Core.Interfaces.Service
 {
-    public interface ICategoryService
+    /// <summary>
+    /// Interface xử lý nghiệp vụ cho thể loại
+    /// CreatedBy: NDHuy (20/04/2022)
+    /// </summary>
+    public interface ICategoryService : IBaseService<Category>
     {
-        int Insert(Category category);
-        int Update(Category category, Guid categoryId);
+        
     }
 }

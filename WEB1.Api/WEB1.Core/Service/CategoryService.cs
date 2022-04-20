@@ -16,7 +16,7 @@ namespace WEB1.Core.Service
         {
             _categoryRepository = categoryRepository;
         }
-        public int Insert(Category category)
+        public int? InsertService(Category category)
         {
             //TODO: validate dữ liệu:
 
@@ -24,7 +24,7 @@ namespace WEB1.Core.Service
             return _categoryRepository.Insert(category);
         }
 
-        public int Update(Category category, Guid categoryId)
+        public int? UpdateService(Category category, Guid categoryId)
         {
             //TODO: validate dữ liệu:
 

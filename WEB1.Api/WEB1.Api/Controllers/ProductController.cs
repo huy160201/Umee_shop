@@ -24,7 +24,7 @@ namespace WEB1.Api.Controllers
         {
             try
             {
-                var products = _productRepository.GetProducts();
+                var products = _productRepository.Get();
                 return Ok(products);
             }
             catch (Exception ex)

@@ -63,7 +63,7 @@ namespace WEB1.Api.Controllers
         {
             try
             {
-                var res = _categoryService.Insert(category);
+                var res = _categoryService.InsertService(category);
                 if (res > 0)
                     return StatusCode(201, res);
                 else
@@ -87,6 +87,29 @@ namespace WEB1.Api.Controllers
             try
             {
                 var res = _categoryRepository.Delete(categoryId);
+                if (res > 0)
+                    return StatusCode(201, res);
+                else
+                    return Ok(res);
+            }
+            catch (Exception ex)
+            {
+                var result = new
+                {
+                    devMsg = ex.Message,
+                    userMag = "Có lỗi xảy ra",
+                    data = ""
+                };
+                return StatusCode(500, result);
+            }
+        }
+
+        [HttpPut("{categoryId}")]
+        public IActionResult Update(Category category, Guid categoryId)
+        {
+            try
+            {
+                var res = _categoryService.UpdateService(category, categoryId);
                 if (res > 0)
                     return StatusCode(201, res);
                 else

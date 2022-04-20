@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WEB1.Core.Interfaces.Infrastructure;
+using WEB1.Core.UmeeAttribute;
 
 namespace WEB1.Infrastructure.Repository
 {
@@ -12,7 +14,7 @@ namespace WEB1.Infrastructure.Repository
     /// Base Repository
     /// CreatedBy: NDHuy (12/04/2022)
     /// </summary>
-    public class BaseRepository
+    public class BaseRepository<UmeeEntity> : IBaseRepository<UmeeEntity>
     {
         // Khai báo thông tin kết nối: 
         protected string connectionString = "Server = localhost; " +
@@ -22,7 +24,7 @@ namespace WEB1.Infrastructure.Repository
                                 "Password=mgmepgmfte";
         protected MySqlConnection sqlConnection;
 
-        protected IEnumerable<object> Get<UmeeEntity>()
+        public IEnumerable<object> Get()
         {
             using(sqlConnection = new MySqlConnection(connectionString))
             {
@@ -35,7 +37,7 @@ namespace WEB1.Infrastructure.Repository
             }
         }
 
-        protected object Get<UmeeEntity>(Guid entityId)
+        public object Get(Guid entityId)
         {
             using (sqlConnection = new MySqlConnection(connectionString))
             {
@@ -50,7 +52,7 @@ namespace WEB1.Infrastructure.Repository
             }
         }
 
-        protected int Insert<UmeeEntity>(UmeeEntity entity)
+        public int Insert(UmeeEntity entity)
         {
             using (sqlConnection = new MySqlConnection(connectionString))
             {
@@ -64,11 +66,20 @@ namespace WEB1.Infrastructure.Repository
                 var props = typeof(UmeeEntity).GetProperties();
                 foreach (var prop in props)
                 {
+                    // lấy kiểu của property
+                    var propertyType = prop.PropertyType;
+
                     // lấy tên của property
                     var propName = prop.Name;
 
                     // lấy giá trị của property
                     var propValue = prop.GetValue(entity);
+
+                    // kiểm tra xem prop có phải là khóa chính không?
+                    // nếu là khóa chính thì sinh mới value
+                    var isPrimaryKey = Attribute.IsDefined(prop, typeof(PrimaryKey));
+                    if (isPrimaryKey && propertyType == typeof(Guid))
+                        propValue = Guid.NewGuid();
 
                     // từ tên, giá trị của prop -> build câu lệnh truy vấn, add param cho parameters
                     listColumnNames += $"{propName},";
@@ -86,7 +97,7 @@ namespace WEB1.Infrastructure.Repository
             }
         }   
         
-        protected int Delete<UmeeEntity>(Guid entityId)
+        public int Delete(Guid entityId)
         {
             // lấy ra tên table
             var tableName = typeof(UmeeEntity).Name;
@@ -97,6 +108,39 @@ namespace WEB1.Infrastructure.Repository
             var res = sqlConnection.Execute(sql: sqlCommand, param: parameters);
 
             return res;
-        }    
+        }
+
+        public int Update(UmeeEntity entity, Guid entityId)
+        {
+            using (sqlConnection = new MySqlConnection(connectionString))
+            {
+                // Lấy tên tương ứng tableName trong dtb
+                var tableName = typeof(UmeeEntity).Name;
+                var listUpdate = string.Empty;
+
+                var parameters = new DynamicParameters();
+                // Duyệt từng property của object
+                var props = typeof(UmeeEntity).GetProperties();
+                foreach (var prop in props)
+                {
+                    // Lấy tên của prop
+                    var propName = prop.Name;
+
+                    // Lấy giá trị của prop
+                    var propValue = prop.GetValue(entity);
+
+                    listUpdate += $"{propName} = @{propName}, ";
+                    parameters.Add($"@{propName}", propValue);
+                }
+                // Loại bỏ dấu phẩy ở cuối listUpdate
+                listUpdate = listUpdate.Substring(0, listUpdate.Length - 2);
+                // Khai báo câu lệnh update
+                var sqlCommand = $"UPDATE {tableName} SET {listUpdate} WHERE {tableName}Id = @{tableName}Id";
+                parameters.Add($"@{tableName}Id", entityId);
+
+                var rowUpdates = sqlConnection.Execute(sql: sqlCommand, param: parameters);
+                return rowUpdates;
+            }    
+        }
     }
 }

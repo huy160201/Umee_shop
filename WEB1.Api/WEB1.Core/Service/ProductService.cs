@@ -22,12 +22,8 @@ namespace WEB1.Core.Service
 
         #endregion
         #region Methods
-        public int DeleteService(Guid productId)
-        {
-            throw new NotImplementedException();
-        }
 
-        public int InsertService(Product product)
+        public int? InsertService(Product product)
         {
             var isValid = true;
             //Validate dữ liệu:
@@ -45,7 +41,7 @@ namespace WEB1.Core.Service
             
         }
 
-        public int UpdateService(Product product, Guid productId)
+        public int? UpdateService(Product product, Guid productId)
         {
             throw new NotImplementedException();
         }

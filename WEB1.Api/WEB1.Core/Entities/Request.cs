@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WEB1.Core.UmeeAttribute;
 
 namespace WEB1.Core.Entities
 {
@@ -16,6 +17,7 @@ namespace WEB1.Core.Entities
         /// <summary>
         /// Khóa chính, mã câu hỏi
         /// </summary>
+        [PrimaryKey]
         public Guid RequestId { get; set; }
         /// <summary>
         /// Họ tên khách
