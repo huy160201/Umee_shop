@@ -22,10 +22,14 @@ namespace WEB1.Core.Entities
         /// <summary>
         /// Thể loại sản phẩm
         /// </summary>
+        [NotEmpty]
+        [NotDuplicate]
         public Guid CategoryId { get; set; }
         /// <summary>
         /// Tên sản phẩm
         /// </summary>
+        [NotEmpty]
+        [NotDuplicate]
         public string ProductName { get; set; }
         /// <summary>
         /// Số lượng sản phẩm trong kho

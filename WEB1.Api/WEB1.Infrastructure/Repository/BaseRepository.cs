@@ -142,5 +142,24 @@ namespace WEB1.Infrastructure.Repository
                 return rowUpdates;
             }    
         }
+
+        public bool CheckDuplicate(string propName, object propValue)
+        {
+            bool isDuplicate = false;
+            using (sqlConnection = new MySqlConnection(connectionString))
+            {
+                // lấy tên table
+                var tableName = typeof(UmeeEntity).Name;
+                // khai báo truy vấn
+                var sqlCommand = $"SELECT {propName} FROM {tableName} WHERE {propName} = @{propName}";
+                var parameters = new DynamicParameters();
+                parameters.Add($"{propName}", propValue);
+                // thực thi truy vấn
+                var res = sqlConnection.QueryFirstOrDefault<object>(sql: sqlCommand, param: parameters);
+                if (res != null)
+                    isDuplicate = true;
+            }
+            return isDuplicate;
+        }
     }
 }

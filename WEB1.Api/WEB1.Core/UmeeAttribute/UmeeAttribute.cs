@@ -13,4 +13,14 @@ namespace WEB1.Core.UmeeAttribute
     public class PrimaryKey : Attribute
     {
     }
+
+    [AttributeUsage(AttributeTargets.Property)]
+    public class NotEmpty : Attribute
+    {
+    }
+
+    [AttributeUsage(AttributeTargets.Property)]
+    public class NotDuplicate : Attribute
+    {
+    }
 }

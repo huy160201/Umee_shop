@@ -9,27 +9,27 @@ using WEB1.Core.Interfaces.Service;
 
 namespace WEB1.Core.Service
 {
-    public class CategoryService : ICategoryService
+    public class CategoryService : BaseService<Category>, ICategoryService
     {
         ICategoryRepository _categoryRepository;
-        public CategoryService(ICategoryRepository categoryRepository)
+        public CategoryService(ICategoryRepository categoryRepository) : base(categoryRepository)
         {
             _categoryRepository = categoryRepository;
         }
-        public int? InsertService(Category category)
-        {
-            //TODO: validate dữ liệu:
+        //public int? InsertService(Category category)
+        //{
+        //    //TODO: validate dữ liệu:
 
-            // thực hiện thêm mới dữ liệu vào database
-            return _categoryRepository.Insert(category);
-        }
+        //    // thực hiện thêm mới dữ liệu vào database
+        //    return _categoryRepository.Insert(category);
+        //}
 
-        public int? UpdateService(Category category, Guid categoryId)
-        {
-            //TODO: validate dữ liệu:
+        //public int? UpdateService(Category category, Guid categoryId)
+        //{
+        //    //TODO: validate dữ liệu:
 
-            // thực hiện cập nhật dữ liệu trong database
-            return _categoryRepository.Update(category, categoryId);
-        }
+        //    // thực hiện cập nhật dữ liệu trong database
+        //    return _categoryRepository.Update(category, categoryId);
+        //}
     }
 }

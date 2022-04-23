@@ -22,6 +22,8 @@ namespace WEB1.Core.Entities
         /// <summary>
         /// Tên thể loại
         /// </summary>
+        [NotEmpty]
+        [NotDuplicate]
         public string CategoryName { get; set; }
         #endregion
     }

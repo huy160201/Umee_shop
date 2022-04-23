@@ -47,5 +47,14 @@ namespace WEB1.Core.Interfaces.Infrastructure
         /// <param name="entityId"></param>
         /// <returns>Bản ghi tương ứng với Id</returns>
         object Get(Guid entityId);
+
+        /// <summary>
+        /// Kiểm tra giá trị của prop có trùng lặp không
+        /// </summary>
+        /// <param name="propName">Tên của prop</param>
+        /// <param name="propValue">Giá trị của prop</param>
+        /// <returns>true: trùng lặp, false: ngược lại</returns>
+        /// CreatedBy: NDHuy (23/04/2022)
+        bool CheckDuplicate(string propName, object propValue);
     }
 }

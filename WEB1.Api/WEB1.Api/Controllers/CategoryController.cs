@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WEB1.Core.Entities;
+using WEB1.Core.Exceptions;
 using WEB1.Core.Interfaces.Infrastructure;
 using WEB1.Core.Interfaces.Service;
 
@@ -68,6 +69,10 @@ namespace WEB1.Api.Controllers
                     return StatusCode(201, res);
                 else
                     return Ok(res);
+            }
+            catch (UmeeValidateException ex)
+            {
+                return StatusCode(500, ex.Data);
             }
             catch (Exception ex)
             {
