@@ -22,8 +22,13 @@ namespace WEB1.Core.Service
         }
         public int? InsertService(UmeeEntity entity)
         {
+            var isValid = ValidateObject(entity);
+            if (isValid)
+            {
+                isValid = ValidateCustom(entity);
+            }
             // validate dữ liệu
-            if(ValidateObject(entity) == true)
+            if(isValid)
             {
                 // thêm mới dữ liệu vào dtb
                 var res = _baseRepository.Insert(entity);
@@ -85,6 +90,17 @@ namespace WEB1.Core.Service
                 throw new UmeeValidateException(result);
             }
             return isValid;
+        }
+        /// <summary>
+        /// Hàm validate đặc thù cho từng đối tượng khác nhau
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns>>true -> dữ liệu hợp lệ, false -> ngược lại</returns>
+        /// CreatedBy: NDHuy (25/04/2022)
+        protected virtual bool ValidateCustom(UmeeEntity entity)
+        {
+
+            return true;
         }
     }
 }

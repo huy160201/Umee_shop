@@ -99,15 +99,18 @@ namespace WEB1.Infrastructure.Repository
         
         public int Delete(Guid entityId)
         {
-            // lấy ra tên table
-            var tableName = typeof(UmeeEntity).Name;
-            //xóa dữ liệu
-            var sqlCommand = $"DELETE FROM {tableName} WHERE {tableName}Id = @{tableName}Id";
-            DynamicParameters parameters = new DynamicParameters();
-            parameters.Add($"@{tableName}Id", entityId);
-            var res = sqlConnection.Execute(sql: sqlCommand, param: parameters);
+            using(sqlConnection = new MySqlConnection(connectionString))
+            {
+                // lấy ra tên table
+                var tableName = typeof(UmeeEntity).Name;
+                //xóa dữ liệu
+                var sqlCommand = $"DELETE FROM {tableName} WHERE {tableName}Id = @{tableName}Id";
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add($"@{tableName}Id", entityId);
+                var res = sqlConnection.Execute(sql: sqlCommand, param: parameters);
 
-            return res;
+                return res;
+            }
         }
 
         public int Update(UmeeEntity entity, Guid entityId)

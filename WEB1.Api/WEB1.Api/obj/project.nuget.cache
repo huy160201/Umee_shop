@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ffKThBnNq9BKq49/PwfHJVYDwuZJhnXn+UwLfzcxmgWfC1OJ4aJ8dTB4XUrHj7qv9Hm20yx+Uny7b1psWtjrSQ==",
+  "dgSpecHash": "zVYCvSvDF4vQQnghgOEWbsPA9xD8qODSBVZAdi9Edi72E5IzyvykC4SNwAv4WTvS0Gg/2HxfIjAs7tuX9mFLWQ==",
   "success": true,
-  "projectFilePath": "D:\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Api\\WEB1.Api.csproj",
+  "projectFilePath": "C:\\D-drive\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Api\\WEB1.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USER-PC\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\USER-PC\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",

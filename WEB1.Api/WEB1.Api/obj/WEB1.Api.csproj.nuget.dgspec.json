@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Api\\WEB1.Api.csproj": {}
+    "C:\\D-drive\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Api\\WEB1.Api.csproj": {}
   },
   "projects": {
-    "D:\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Api\\WEB1.Api.csproj": {
+    "C:\\D-drive\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Api\\WEB1.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Api\\WEB1.Api.csproj",
+        "projectUniqueName": "C:\\D-drive\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Api\\WEB1.Api.csproj",
         "projectName": "WEB1.Api",
-        "projectPath": "D:\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Api\\WEB1.Api.csproj",
+        "projectPath": "C:\\D-drive\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Api\\WEB1.Api.csproj",
         "packagesPath": "C:\\Users\\USER-PC\\.nuget\\packages\\",
-        "outputPath": "D:\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Api\\obj\\",
+        "outputPath": "C:\\D-drive\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\USER-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,11 +28,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Core\\WEB1.Core.csproj": {
-                "projectPath": "D:\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Core\\WEB1.Core.csproj"
+              "C:\\D-drive\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Core\\WEB1.Core.csproj": {
+                "projectPath": "C:\\D-drive\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Core\\WEB1.Core.csproj"
               },
-              "D:\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Infrastructure\\WEB1.Infrastructure.csproj": {
-                "projectPath": "D:\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Infrastructure\\WEB1.Infrastructure.csproj"
+              "C:\\D-drive\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Infrastructure\\WEB1.Infrastructure.csproj": {
+                "projectPath": "C:\\D-drive\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Infrastructure\\WEB1.Infrastructure.csproj"
               }
             }
           }
@@ -74,14 +74,14 @@
         }
       }
     },
-    "D:\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Core\\WEB1.Core.csproj": {
+    "C:\\D-drive\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Core\\WEB1.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Core\\WEB1.Core.csproj",
+        "projectUniqueName": "C:\\D-drive\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Core\\WEB1.Core.csproj",
         "projectName": "WEB1.Core",
-        "projectPath": "D:\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Core\\WEB1.Core.csproj",
+        "projectPath": "C:\\D-drive\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Core\\WEB1.Core.csproj",
         "packagesPath": "C:\\Users\\USER-PC\\.nuget\\packages\\",
-        "outputPath": "D:\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Core\\obj\\",
+        "outputPath": "C:\\D-drive\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\USER-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -128,14 +128,14 @@
         }
       }
     },
-    "D:\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Infrastructure\\WEB1.Infrastructure.csproj": {
+    "C:\\D-drive\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Infrastructure\\WEB1.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Infrastructure\\WEB1.Infrastructure.csproj",
+        "projectUniqueName": "C:\\D-drive\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Infrastructure\\WEB1.Infrastructure.csproj",
         "projectName": "WEB1.Infrastructure",
-        "projectPath": "D:\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Infrastructure\\WEB1.Infrastructure.csproj",
+        "projectPath": "C:\\D-drive\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Infrastructure\\WEB1.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\USER-PC\\.nuget\\packages\\",
-        "outputPath": "D:\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Infrastructure\\obj\\",
+        "outputPath": "C:\\D-drive\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\USER-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -152,8 +152,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Core\\WEB1.Core.csproj": {
-                "projectPath": "D:\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Core\\WEB1.Core.csproj"
+              "C:\\D-drive\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Core\\WEB1.Core.csproj": {
+                "projectPath": "C:\\D-drive\\ASP.Net\\Umee_shop\\WEB1.Api\\WEB1.Core\\WEB1.Core.csproj"
               }
             }
           }
