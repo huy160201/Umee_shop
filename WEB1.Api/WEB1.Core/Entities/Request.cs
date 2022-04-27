@@ -31,7 +31,9 @@ namespace WEB1.Core.Entities
         /// Nội dung
         /// </summary>
         public string Content { get; set; }
-
+        /// <summary>
+        /// Ngày diễn ra
+        /// </summary>
         public DateOnly CreatedAt { get; set; }
         #endregion
     }

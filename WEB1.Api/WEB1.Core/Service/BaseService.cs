@@ -64,7 +64,7 @@ namespace WEB1.Core.Service
             {
                 var propValue = prop.GetValue(entity);
                 if (propValue == null || string.IsNullOrEmpty(propValue.ToString()))
-                    errorMsgs.Add($"Thông tin {prop.Name} không được phép để trống");
+                    errorMsgs.Add(Properties.Resources.NotEmptyException + $"{prop.Name}");
 
             }
             // check trùng lặp dữ liệu: 
@@ -75,7 +75,7 @@ namespace WEB1.Core.Service
                 // truy cập database kiểm tra mã có trùng lặp hay không
                 var isDuplicate = _baseRepository.CheckDuplicate(prop.Name, prop.GetValue(entity));
                 if(isDuplicate)
-                    errorMsgs.Add($"Thông tin {prop.Name} không được phép trùng");
+                    errorMsgs.Add(Properties.Resources.NotDuplicateException + $"{prop.Name}");
             }
             // check định dạng dữ liệu: 
 
@@ -84,7 +84,7 @@ namespace WEB1.Core.Service
                 isValid = false;
                 var result = new
                 {
-                    userMsg = "Dữ liệu không hợp lệ, vui lòng kiểm tra lại",
+                    userMsg = Properties.Resources.ValidateException,
                     data = errorMsgs
                 };
                 throw new UmeeValidateException(result);
@@ -99,7 +99,6 @@ namespace WEB1.Core.Service
         /// CreatedBy: NDHuy (25/04/2022)
         protected virtual bool ValidateCustom(UmeeEntity entity)
         {
-
             return true;
         }
     }

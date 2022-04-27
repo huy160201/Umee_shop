@@ -1,4 +1,5 @@
 ﻿using WEB1.Api.Interfaces.Infrastructure;
+using WEB1.Core.Exceptions;
 using WEB1.Core.Interfaces.Infrastructure;
 using WEB1.Core.Interfaces.Service;
 using WEB1.Core.Service;
@@ -8,7 +9,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add<HttpResponseExceptionFilter>();
+});
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

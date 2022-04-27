@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WEB1.Core.Enum;
 using WEB1.Core.UmeeAttribute;
 
 namespace WEB1.Core.Entities
@@ -26,7 +27,25 @@ namespace WEB1.Core.Entities
         /// <summary>
         /// Phân quyền, 0 - khách hàng, 1 - admin
         /// </summary>
-        public int Admin { get; set; }
+        public Admin Admin { get; set; }
+        /// <summary>
+        /// Xử lý Enum cho Admin
+        /// </summary>
+        public string AdminName
+        {
+            get
+            {
+                switch (Admin)
+                {
+                    case Enum.Admin.Customer:
+                        return Properties.Resources.Enum_Customer;
+                    case Enum.Admin.Admin:
+                        return Properties.Resources.Enum_Admin;
+                    default:
+                        return Properties.Resources.Enum_Customer;
+                }    
+            }
+        }
         /// <summary>
         /// Email
         /// </summary>
@@ -38,7 +57,25 @@ namespace WEB1.Core.Entities
         /// <summary>
         /// Giới tính, 0 - Nam, 1 - Nữ
         /// </summary>
-        public int Gender { get; set; }
+        public Gender Gender { get; set; }
+        /// <summary>
+        /// Xử lý Enum cho Gender
+        /// </summary>
+        public string GenderName
+        {
+            get
+            {
+                switch (Gender)
+                {
+                    case Enum.Gender.Male:
+                        return Properties.Resources.Enum_Male;
+                    case Enum.Gender.Female:
+                        return Properties.Resources.Enum_Female;
+                    default:
+                        return Properties.Resources.Enum_Male;
+                }
+            }
+        }
         #endregion
 
     }

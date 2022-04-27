@@ -34,3 +34,5 @@ C:\D-drive\ASP.Net\Umee_shop\WEB1.Api\WEB1.Core\obj\Debug\net6.0\WEB1.Core.dll
 C:\D-drive\ASP.Net\Umee_shop\WEB1.Api\WEB1.Core\obj\Debug\net6.0\refint\WEB1.Core.dll
 C:\D-drive\ASP.Net\Umee_shop\WEB1.Api\WEB1.Core\obj\Debug\net6.0\WEB1.Core.pdb
 C:\D-drive\ASP.Net\Umee_shop\WEB1.Api\WEB1.Core\obj\Debug\net6.0\ref\WEB1.Core.dll
+C:\D-drive\ASP.Net\Umee_shop\WEB1.Api\WEB1.Core\obj\Debug\net6.0\WEB1.Core.Properties.Resources.resources
+C:\D-drive\ASP.Net\Umee_shop\WEB1.Api\WEB1.Core\obj\Debug\net6.0\WEB1.Core.csproj.GenerateResource.cache

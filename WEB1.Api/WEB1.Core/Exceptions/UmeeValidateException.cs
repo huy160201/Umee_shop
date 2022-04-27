@@ -14,7 +14,7 @@ namespace WEB1.Core.Exceptions
         {
             get 
             {
-                return "Dữ liệu không hợp lệ, vui lòng kiểm tra lại";
+                return Properties.Resources.ValidateException;
             }
         }
 

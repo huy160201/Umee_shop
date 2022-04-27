@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WEB1.Core.Enum;
 using WEB1.Core.UmeeAttribute;
 
 namespace WEB1.Core.Entities
@@ -30,7 +31,23 @@ namespace WEB1.Core.Entities
         /// <summary>
         /// trạng thái đơn, 0 - chưa duyệt, 1 - đã duyệt
         /// </summary>
-        public int Status { get; set; }
+        public Status Status { get; set; }
+
+        public string StatusName
+        {
+            get
+            {
+                switch (Status)
+                {
+                    case Enum.Status.Unaccept:
+                        return Properties.Resources.Enum_Status_Unaccept;
+                    case Enum.Status.Accept:
+                        return Properties.Resources.Enum_Status_Accept;
+                    default:
+                        return Properties.Resources.Enum_Status_Unaccept;
+                }
+            }
+        }
         /// <summary>
         /// phí vận chuyển
         /// </summary>
