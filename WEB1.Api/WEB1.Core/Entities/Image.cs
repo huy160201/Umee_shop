@@ -19,10 +19,12 @@ namespace WEB1.Core.Entities
         /// </summary>
         [PrimaryKey]
         public Guid ImageId { get; set; }
+
         /// <summary>
         /// Khóa ngoại, mã sản phẩm
         /// </summary>
         public Guid ProductId { get; set; }
+
         /// <summary>
         /// Đường dẫn ảnh
         /// </summary>

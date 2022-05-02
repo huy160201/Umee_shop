@@ -56,5 +56,13 @@ namespace WEB1.Core.Interfaces.Infrastructure
         /// <returns>true: trùng lặp, false: ngược lại</returns>
         /// CreatedBy: NDHuy (23/04/2022)
         bool CheckDuplicate(string propName, object propValue);
+
+        /// <summary>
+        /// Lấy ra các bản ghi theo phân trang
+        /// </summary>
+        /// <param name="records">Số lượng bản ghi 1 trang</param>
+        /// <param name="pageNumber">Trang hiện tại</param>
+        /// <returns>Phân trang</returns>
+        IEnumerable<object> GetPagination(int records, int pageNumber, Guid? categoryId, int? minPrice, int? maxPrice, string? priceSort, string? soldSort);
     }
 }

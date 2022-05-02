@@ -19,6 +19,7 @@ namespace WEB1.Core.Entities
         /// </summary>
         [PrimaryKey]
         public Guid CategoryId { get; set; }
+
         /// <summary>
         /// Tên thể loại
         /// </summary>

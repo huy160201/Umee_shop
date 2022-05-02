@@ -21,6 +21,12 @@ namespace WEB1.Api.Controllers
             _baseService = baseService;
             _baseRepository = baseRepository;
         }
+        [HttpGet("pagination")]
+        public IActionResult GetPagination(int records, int pageNumber, Guid? categoryId, int? minPrice, int? maxPrice, string? priceSort, string? soldSort)
+        {
+            var data = _baseRepository.GetPagination(records, pageNumber, categoryId, minPrice, maxPrice, priceSort, soldSort);
+            return Ok(data);
+        }
 
         [HttpGet]
         public IActionResult Get()

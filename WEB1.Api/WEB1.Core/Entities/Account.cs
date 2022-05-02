@@ -20,14 +20,17 @@ namespace WEB1.Core.Entities
         /// </summary>
         [PrimaryKey]
         public Guid AccountId { get; set; }
+
         /// <summary>
         /// Họ tên
         /// </summary>
         public string FullName { get; set; }
+
         /// <summary>
         /// Phân quyền, 0 - khách hàng, 1 - admin
         /// </summary>
         public Admin Admin { get; set; }
+
         /// <summary>
         /// Xử lý Enum cho Admin
         /// </summary>
@@ -46,18 +49,22 @@ namespace WEB1.Core.Entities
                 }    
             }
         }
+
         /// <summary>
         /// Email
         /// </summary>
         public string Email { get; set; }
+
         /// <summary>
         /// Ngày tháng năm sinh
         /// </summary>
         public DateOnly DateOfBirth { get; set; }
+
         /// <summary>
         /// Giới tính, 0 - Nam, 1 - Nữ
         /// </summary>
         public Gender Gender { get; set; }
+
         /// <summary>
         /// Xử lý Enum cho Gender
         /// </summary>

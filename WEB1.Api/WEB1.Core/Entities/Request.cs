@@ -19,18 +19,22 @@ namespace WEB1.Core.Entities
         /// </summary>
         [PrimaryKey]
         public Guid RequestId { get; set; }
+
         /// <summary>
         /// Họ tên khách
         /// </summary>
         public string FullName { get; set; }
+
         /// <summary>
         /// Số điện thoại
         /// </summary>
         public int PhoneNumber { get; set; }
+
         /// <summary>
         /// Nội dung
         /// </summary>
         public string Content { get; set; }
+
         /// <summary>
         /// Ngày diễn ra
         /// </summary>

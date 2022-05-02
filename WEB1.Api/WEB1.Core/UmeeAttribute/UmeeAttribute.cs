@@ -23,4 +23,9 @@ namespace WEB1.Core.UmeeAttribute
     public class NotDuplicate : Attribute
     {
     }
+
+    [AttributeUsage(AttributeTargets.Property)]
+    public class ForeignKey : Attribute
+    {
+    }
 }

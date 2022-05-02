@@ -17,16 +17,20 @@ namespace WEB1.Core.Entities
         /// <summary>
         /// Khóa ngoại, Mã đơn hàng
         /// </summary>
-        [PrimaryKey]
+        [ForeignKey]
         public Guid OrderId { get; set; }
+
         /// <summary>
         /// Khóa ngoại, mã sản phẩm
         /// </summary>
+        [ForeignKey]
         public Guid ProductId { get; set; }
+
         /// <summary>
         /// Giá đơn hàng
         /// </summary>
         public int Price { get; set; }
+
         /// <summary>
         /// Số lượng đặt mua
         /// </summary>

@@ -24,10 +24,53 @@ namespace WEB1.Infrastructure.Repository
                                 "Password=mgmepgmfte";
         protected MySqlConnection sqlConnection;
 
+        public IEnumerable<object> GetPagination(int records, int pageNumber, Guid? categoryId, int? minPrice, int? maxPrice, string? priceSort, string? soldSort)
+        {
+            using(sqlConnection = new MySqlConnection(connectionString))
+            {
+                var strSearch = "WHERE TRUE";
+                var strOrder = "ORDER BY";
+                if(categoryId != null)
+                {
+                    strSearch += $" AND categoryId = '{categoryId.Value}'";
+                }
+                if(minPrice != null)
+                {
+                    strSearch += $" AND Price > {minPrice.Value}";
+                } else if(maxPrice != null)
+                {
+                    strSearch += $" AND Price < {maxPrice.Value}";
+                }
+                if(priceSort != null && priceSort=="DESC")
+                {
+                    strOrder += " Price DESC";
+                }
+                if(priceSort != null && priceSort == "ASC")
+                {
+                    strOrder += " Price ASC";
+                }
+                // lấy ra giá trị offset
+                var offsetValue = (pageNumber - 1) * records;
+                // lấy ra tên table
+                var tableName = typeof(UmeeEntity).Name;
+                // lấy dữ liệu
+                var sqlCommand = $"SELECT * FROM {tableName} {strSearch} {strOrder} LIMIT @{records} OFFSET @{offsetValue}";
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add($"@{records}", records);
+                parameters.Add($"@{offsetValue}", offsetValue);
+                //parameters.Add($"@{categoryId}", categoryId);
+                // thực thi truy vấn
+                var entities = sqlConnection.Query<object>(sqlCommand, parameters);
+                // trả về số bản ghi
+                return entities;
+            }
+        }
+
         public IEnumerable<object> Get()
         {
             using(sqlConnection = new MySqlConnection(connectionString))
             {
+                // lấy ra tên table
                 var tableName = typeof(UmeeEntity).Name;
                 // lấy dữ liệu:
                 var sqlCommand = $"SELECT * FROM {tableName}";

@@ -20,14 +20,17 @@ namespace WEB1.Core.Entities
         /// </summary>
         [PrimaryKey]
         public Guid OrderId { get; set; }
+
         /// <summary>
         /// khóa ngoại - tài khoản đặt đơn
         /// </summary>
         public Guid AccountId { get; set; }
+
         /// <summary>
         /// ngày tạo đơn
         /// </summary>
         public DateTime CreatedAt { get; set; }
+
         /// <summary>
         /// trạng thái đơn, 0 - chưa duyệt, 1 - đã duyệt
         /// </summary>
@@ -48,18 +51,22 @@ namespace WEB1.Core.Entities
                 }
             }
         }
+
         /// <summary>
         /// phí vận chuyển
         /// </summary>
         public int TransportFee { get; set; }
+
         /// <summary>
         /// tên người nhận
         /// </summary>
         public string ReceiverName { get; set; }
+
         /// <summary>
         /// địa chỉ nhận
         /// </summary>
         public string Address { get; set; }
+
         /// <summary>
         /// số điện thoại người nhận
         /// </summary>
